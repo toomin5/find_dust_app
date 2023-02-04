@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+    <div>
+      <h2 id="clock"></h2>
+    </div>
     <div id="loading">
-      <h1>정보 불러오는중..</h1>
+      <h1>로딩중...</h1>
     </div>
     <div id="main">
       <h1 id="title">서울시 미세먼지 지수</h1>
@@ -22,15 +29,16 @@
           autofocus
           value=""
         />
-        <button class="searchBtn" id="searchBtn">검색</button>
+        <button class="searchBtn" id="searchBtn">🔍</button>
       </div>
       <div id="result">
         <h1 id="sidoName"></h1>
-        <h1 id="stationName"></h1>
         <h1 id="pm10Value"></h1>
         <h1 id="dataTime"></h1>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script src="./JS/weather.js"></script>
+    <script src="./JS/main.js"></script>
+    <script src="./JS/clock.js"></script>
   </body>
 </html>

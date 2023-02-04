@@ -3,3 +3,6 @@
 ---
 
 JavaScript
+
+- readme작성하기
+- (실시간시계넣기)

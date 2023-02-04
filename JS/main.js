@@ -20,7 +20,7 @@ function responseApi() {
   fetch(url)
     .then((res) => res.json())
     .then((myJson) => {
-      //api로딩 대기화면
+      //api로딩 대기화면 (api가 완료되지않으면 검색해도 결과가 안나와서 display:none사용)
       displayChange();
 
       //api json 더 추가해야해서 지우지않는 코드
@@ -34,11 +34,9 @@ function responseApi() {
 
           //사용자가 입력한 값$search == items.stationName의 값이 같은 지역의 정보
           if (match.stationName == $search.value) {
-            $sidoNameH1.innerHTML = `${match.sidoName}시`;
-            $stationNameH1.innerHTML = match.stationName;
+            $sidoNameH1.innerHTML = `${match.sidoName}시 ${match.stationName}`;
             $pm10ValueH1.innerHTML = `미세먼지농도:${match.pm10Value}`;
             $dataTimeH1.innerHTML = `측정시간:${match.dataTime}`;
-            pm10ValueColor();
           }
         }
         //input태그 초기화
@@ -52,23 +50,23 @@ function displayChange() {
   $loadingDiv.style.display = "none";
 }
 
-function pm10ValueColor() {
-  switch (match.pm10Value) {
-    case match.pm10Value <= 30:
-      $pm10ValueH1.style.color = "blue";
-      break;
-    case match.pm10Value <= 80:
-      $pm10ValueH1.style.color = "green";
-      break;
-    case match.pm10Value <= 150:
-      $pm10ValueH1.style.color = "orange";
-      break;
-    case match.pm10Value > 151:
-      $pm10ValueH1.style.color = "red";
-      break;
-  }
-  console.log(parseInt(match.pm10Value));
-}
+// //미세먼지 농도를 색깔로 표현
+// function pm10ValueColor() {
+//   switch (match.pm10Value) {
+//     case match.pm10Value <= 30:
+//       console.log("30");
+//       break;
+//     case match.pm10Value <= 80:
+//       console.log("80");
+//       break;
+//     case match.pm10Value <= 150:
+//       console.log("150");
+//       break;
+//     case match.pm10Value > 151:
+//       console.log("151");
+//       break;
+//   }
+// }
 
 //1.시, 구 입력하는 input값 받고
 //2.버튼클릭하면 그의 맞는 시,구의 미세먼지 농도,측정시간 표시
