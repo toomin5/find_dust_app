@@ -12,8 +12,8 @@ url주소를 가져와<br>
    fetch()함수를 이용해 fetch의 인자로 url을 넣어주고 res.json 메소드 사용 시<br>
    http응답 body텍스트를 JSON형식으로 바뀐 promise를 반환함, .then(res ⇒ res.json()) 이다
 
-- fetch()는 원격api의 데이터를 가져올 때 사용함
-- fetch()는 get방식이 기본값이므로 인자가 불필요함
+1.fetch()는 원격api의 데이터를 가져올 때 사용함
+2.fetch()는 get방식이 기본값이므로 인자가 불필요함
 
     fetch(url)
       .then((res) => res.json())
