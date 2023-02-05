@@ -20,14 +20,14 @@ function responseApi() {
   fetch(url)
     .then((res) => res.json())
     .then((myJson) => {
-      //api로딩 대기화면 (api가 완료되지않으면 검색해도 결과가 안나와서 display:none사용)
+      //api로딩 대기화면 (api가 로딩 완료가 안되면 검색해도 결과가 안나와서 display:none사용) 가려준다
       displayChange();
 
-      //api json 더 추가해야해서 지우지않는 코드
+      //서울시 40개 정보보기 console.log(info);
       const info = myJson["response"]["body"]["items"];
 
       //검색버튼
-      $searchbtn.addEventListener("click", () => {
+      $searchbtn.addEventListener("click", (evt) => {
         //서울시의 40개 지역 array가 0~39
         for (let i = 0; i < 40; i++) {
           const match = myJson["response"]["body"]["items"][i];
@@ -35,8 +35,27 @@ function responseApi() {
           //사용자가 입력한 값$search == items.stationName의 값이 같은 지역의 정보
           if (match.stationName == $search.value) {
             $sidoNameH1.innerHTML = `${match.sidoName}시 ${match.stationName}`;
-            $pm10ValueH1.innerHTML = `미세먼지농도:${match.pm10Value}`;
+            $pm10ValueH1.innerText = `미세먼지농도:${match.pm10Value}`;
             $dataTimeH1.innerHTML = `측정시간:${match.dataTime}`;
+
+            //미세먼지 농도에 따라 h1 컬러변경
+            if (match.pm10Value > 0 && match.pm10Value <= 30) {
+              $pm10ValueH1.style.color = "blue";
+            } else if (match.pm10Value > 30 && match.pm10Value <= 80) {
+              $pm10ValueH1.style.color = "green";
+            } else if (match.pm10Value > 80 && match.pm10Value <= 150) {
+              $pm10ValueH1.style.color = "orange";
+            } else {
+              $pm10ValueH1.style.color = "red";
+            }
+
+            break;
+            //40기의 값과 맞지 않는 값을 입력한 경우
+          } else if (match.stationName != $search.value) {
+            $sidoNameH1.innerHTML = "위치를 잘못 입력하셨습니다.";
+            $pm10ValueH1.innerHTML = "";
+            $dataTimeH1.innerHTML = "";
+            $search.focus();
           }
         }
         //input태그 초기화
@@ -50,25 +69,7 @@ function displayChange() {
   $loadingDiv.style.display = "none";
 }
 
-// //미세먼지 농도를 색깔로 표현
-// function pm10ValueColor() {
-//   switch (match.pm10Value) {
-//     case match.pm10Value <= 30:
-//       console.log("30");
-//       break;
-//     case match.pm10Value <= 80:
-//       console.log("80");
-//       break;
-//     case match.pm10Value <= 150:
-//       console.log("150");
-//       break;
-//     case match.pm10Value > 151:
-//       console.log("151");
-//       break;
-//   }
-// }
-
-//1.시, 구 입력하는 input값 받고
+//1.시, 구 입력하는 input값 받고(미완)
 //2.버튼클릭하면 그의 맞는 시,구의 미세먼지 농도,측정시간 표시
 //3.로그인기능이나, 실시간시계넣기
 

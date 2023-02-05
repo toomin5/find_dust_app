@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
+    <div class="my">
+      <h1>미노놀이터</h1>
+    </div>
     <div id="weather">
       <span></span>
       <span></span>
     </div>
-    <div>
+    <div id="clockDiv">
       <h2 id="clock"></h2>
     </div>
     <div id="loading">
@@ -35,6 +38,18 @@
         <h1 id="sidoName"></h1>
         <h1 id="pm10Value"></h1>
         <h1 id="dataTime"></h1>
+      </div>
+      <div id="colorBar">
+        <hr id="colorBlue" />
+        <hr id="colorGreen" />
+        <hr id="colorOrange" />
+        <hr id="colorRed" />
+      </div>
+      <div id="stateText" class="stateText">
+        <h3 class="good">좋음0&nbsp;~&nbsp;30</h3>
+        <h3 class="usually">보통 ~ 80</h3>
+        <h3 class="bad">나쁨 ~ 150</h3>
+        <h3 class="veryBad">매우나쁨 151~</h3>
       </div>
     </div>
     <script src="./JS/weather.js"></script>
