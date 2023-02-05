@@ -27,7 +27,7 @@ function responseApi() {
       const info = myJson["response"]["body"]["items"];
 
       //검색버튼
-      $searchbtn.addEventListener("click", (evt) => {
+      $searchbtn.addEventListener("click", () => {
         //서울시의 40개 지역 array가 0~39
         for (let i = 0; i < 40; i++) {
           const match = myJson["response"]["body"]["items"][i];
