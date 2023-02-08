@@ -10,11 +10,13 @@ const $loadingDiv = document.querySelector("#loading");
 const $sidoNameH1 = document.querySelector("#sidoName");
 const $stationNameH1 = document.querySelector("#stationName");
 const $pm10ValueH1 = document.querySelector("#pm10Value");
+const $stateH1 = document.querySelector("#state");
 const $dataTimeH1 = document.querySelector("#dataTime");
 const $searchbtn = document.querySelector("#searchBtn");
 
 const $search = document.querySelector("#search"); //시 입력
 
+//호이스팅
 responseApi(); //서버
 function responseApi() {
   fetch(url)
@@ -36,17 +38,25 @@ function responseApi() {
           if (match.stationName == $search.value) {
             $sidoNameH1.innerHTML = `${match.sidoName}시 ${match.stationName}`;
             $pm10ValueH1.innerText = `미세먼지농도:${match.pm10Value}`;
-            $dataTimeH1.innerHTML = `측정시간:${match.dataTime}`;
+            $dataTimeH1.innerHTML = `${match.dataTime}기준`;
 
             //미세먼지 농도에 따라 h1 컬러변경
             if (match.pm10Value > 0 && match.pm10Value <= 30) {
+              $stateH1.innerHTML = "좋음";
               $pm10ValueH1.style.color = "blue";
+              $stateH1.style.color = "blue";
             } else if (match.pm10Value > 30 && match.pm10Value <= 80) {
+              $stateH1.innerHTML = "보통";
               $pm10ValueH1.style.color = "green";
+              $stateH1.style.color = "green";
             } else if (match.pm10Value > 80 && match.pm10Value <= 150) {
+              $stateH1.innerHTML = "나쁨";
               $pm10ValueH1.style.color = "orange";
+              $stateH1.style.color = "orange";
             } else {
+              $stateH1.innerHTML = "매우나쁨";
               $pm10ValueH1.style.color = "red";
+              $stateH1.style.color = "red";
             }
 
             break;

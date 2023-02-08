@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div class="my">
+    <!-- <div class="my">
       <h1>미노놀이터</h1>
-    </div>
+    </div> -->
     <div id="weather">
       <span></span>
       <span></span>
@@ -22,22 +22,23 @@
       <h1>로딩중...</h1>
     </div>
     <div id="main">
-      <h1 id="title">서울시 미세먼지 지수</h1>
+      <h1 id="title">서울시의 지역을 입력하세요.<br>:)마포구, 서초구, 강남구..</h1>
       <div id="match">
         <input
           type="text"
           class="search"
           id="search"
-          placeholder="원하는 위치를 입력하세요. ex)OO구, OO로.."
+        
           autofocus
           value=""
         />
         <button class="searchBtn" id="searchBtn">🔍</button>
       </div>
       <div id="result">
-        <h1 id="sidoName"></h1>
-        <h1 id="pm10Value"></h1>
-        <h1 id="dataTime"></h1>
+        <h1 id="state"></h1>
+        <h3 id="dataTime"></h3>
+        <h2 id="sidoName"></h2>
+        <h3 id="pm10Value"></h3>
       </div>
       <div id="colorBar">
         <hr id="colorBlue" />
