@@ -20,7 +20,7 @@ function onGeoOk(position) {
 }
 
 function onGeoError() {
-  alert("can't you find you,,,");
+  alert("위치정보를 이용할 수 없습니다.");
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);

@@ -2,11 +2,14 @@
 
 ### 공공데이터 API를 이용한 미세먼지정보앱
 
+<img src="![Uploading Screenshot 2023-02-09 at 20.44.16.png…]()">
+
 ###### JavaScript
 
 ---
 
-GitHub.IO 주소 =>
+GitHub.IO 주소 => https://toomin5.github.io/find_dust_app/main.html
+
 
 url주소를 가져와<br>
    fetch()함수를 이용해 fetch의 인자로 url을 넣어주고 res.json 메소드 사용 시<br>
