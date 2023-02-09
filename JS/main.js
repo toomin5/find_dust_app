@@ -66,7 +66,9 @@ function responseApi() {
           } else if (match.stationName != $search.value) {
             $sidoNameH1.innerHTML = "위치를 잘못 입력하셨습니다.";
             $pm10ValueH1.innerHTML = "";
+            $stateH1.innerHTML = "";
             $dataTimeH1.innerHTML = "";
+            $colorText.style.display = 'none';
             $search.focus();
           }
         }
