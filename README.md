@@ -2,9 +2,9 @@
 
 ### 공공데이터 API를 이용한 미세먼지정보앱
 
-<img src="https://user-images.githubusercontent.com/95535471/217806081-0c2fb3f0-9a5f-4f11-87cb-b8b37db1eba8.png" width="700" height="500"/>
+<img src="https://user-images.githubusercontent.com/95535471/217806081-0c2fb3f0-9a5f-4f11-87cb-b8b37db1eba8.png" width="1000" height="400"/>
 
-<img src="https://user-images.githubusercontent.com/95535471/217806673-ea401b2b-d13c-4777-996a-e13efaf11040.png" width="700" height="500"/>
+<img src="https://user-images.githubusercontent.com/95535471/217806673-ea401b2b-d13c-4777-996a-e13efaf11040.png" width="1000" height="400"/>
 
 ###### JavaScript
 
