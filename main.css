@@ -4,16 +4,32 @@
 }
 
 body {
-  background-image: url('./img/seoul.jpg');
+  background-image: url('./img/seoul1.jpg');
   background-repeat: no-repaet;
   background-size: cover;
   background-position: center center;
   height: 100vh;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 0;
+  overflow: auto;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body * {
+  z-index: 1;
 }
 
 .my {
@@ -31,6 +47,7 @@ body {
 }
 
 #title {
+  color: aliceblue;
   font-weight: 100px;
   margin-top: 200px;
   text-align: center;
@@ -53,14 +70,18 @@ body {
 }
 
 #result {
-  text-align: center;
+  justify-content: center;
+  display: flex;
+  color: aliceblue;
 }
 
 #clock {
+  color: aliceblue;
   text-align: right;
 }
 
 #weather {
+  color: aliceblue;
   text-align: right;
   font-size: 30px;
   font-weight: 20%;
@@ -133,4 +154,25 @@ body {
 .veryBad {
   padding-left: 20%;
   color: #ff3333;
+}
+
+#state {
+  font-size: 40px;
+  font-weight: 3;
+}
+
+#dataTime {
+  margin-top: 60px;
+}
+
+#sidoName {
+  margin-top: 60px;
+}
+
+#pm10Value {
+  margin-top: 60px;
+}
+
+.colorText{
+  display: none;
 }
