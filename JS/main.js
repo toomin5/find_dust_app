@@ -13,7 +13,7 @@ const $pm10ValueH1 = document.querySelector("#pm10Value");
 const $stateH1 = document.querySelector("#state");
 const $dataTimeH1 = document.querySelector("#dataTime");
 const $searchbtn = document.querySelector("#searchBtn");
-const $colorText = document.querySelector('.colorText');
+const $colorText = document.querySelector(".colorText");
 
 const $search = document.querySelector("#search"); //시 입력
 
@@ -36,11 +36,10 @@ function responseApi() {
 
           //사용자가 입력한 값$search == items.stationName의 값이 같은 지역의 정보
           if (match.stationName == $search.value) {
-            $colorText.style.display = 'block';
+            $colorText.style.display = "block";
             $sidoNameH1.innerHTML = `${match.sidoName}시 ${match.stationName}`;
             $pm10ValueH1.innerText = `미세먼지농도:${match.pm10Value}`;
             $dataTimeH1.innerHTML = `${match.dataTime}기준/`;
-
 
             //미세먼지 농도에 따라 h1 컬러변경
             if (match.pm10Value > 0 && match.pm10Value <= 30) {
@@ -68,7 +67,7 @@ function responseApi() {
             $pm10ValueH1.innerHTML = "";
             $stateH1.innerHTML = "";
             $dataTimeH1.innerHTML = "";
-            $colorText.style.display = 'none';
+            $colorText.style.display = "none";
             $search.focus();
           }
         }
